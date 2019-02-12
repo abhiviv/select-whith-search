@@ -1,0 +1,134 @@
+<html>
+<head>
+<style>
+.abc{
+   max-width: 221px;
+    height: 4vh;
+    padding: 3px;
+	border:1px solid black;
+	text-align: center;
+    font-size: 19px;
+}
+p{
+   margin-top:5px;
+}
+.list{
+    max-width: 227px;
+    height: 20vh;
+	border:1px solid black;
+	display:none;
+	
+
+}
+ul{
+ 
+    list-style-type: none;
+    font-size: 15px;
+   text-align: left;
+    margin-left: -29px;
+	margin-top:-9px;
+	overflow-y:scroll;
+	height:12vh;
+
+}
+a{
+ text-decoration: none;
+ color:black;
+}
+</style>
+</head>
+<body>
+
+</body>
+<div class="abc" id="ww" onclick="abc()">
+<p>-----Select-----</p>
+</div>
+<div class="list" id="selectas" ondblclick="ok()" >
+ <p><input type="text"style="width: 204px;margin-left: 7px;border: 1px solid;outline: none;border-radius: 6px;height: 4vh;" id="myInput"  onkeyup="myFunction();absc();" ></p>
+ <ul id="myUL">
+ <li>
+ <a><option value="1" id="aa">Manjit</option></a>
+ <a><option value="2" id="aa">Manjait</option></a>
+ <a><option value="3" id="aa">asdsada</option></a>
+<a><option value="4" id="aa">sdsad</option></a>
+<a><option value="5" id="aa">Mandfdfjit</option></a>
+<a><option value="6" id="aa">ddas</option></a>
+<a><option value="7" id="aa">asasas</option></a>
+<a><option value="8" id="aa">dfd</option></a>
+<a><option value="9" id="aa">dfdf</option></a>
+<a><option value="10" id="aa">dfdf</option></a>
+<a><option value="10" id="aa">dfdf</option></a>
+ </li>
+ </ul>
+</div>
+<div id="ww"></div>
+</body>
+<script>
+function abc(){
+  var a=document.getElementById('selectas');
+  if(a.style.display==="none"){
+       a.style.display="block";
+  }
+  else{
+       a.style.display="none";
+  }
+}
+</script>
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("a");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("option")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+			document.getElementById('ww').innerHTML = txtValue;
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+	
+}
+</script>
+<script>
+function absc(){
+      var a=document.getElementById('myInput').value;
+	  var b=document.getElementById('aa').innerHTML;
+	  if(a == b){
+	     alert("equal");
+	  }
+	  else{    
+	  }
+	  
+}
+
+</script>
+<script>
+ function getEventTarget(e) {
+        e = e || window.event;
+        return e.target || e.srcElement; 
+    }
+
+    var ul = document.getElementById('myUL');
+    ul.onclick = function(event) {
+        var target = getEventTarget(event);
+        
+		document.getElementById('ww').innerHTML = target.innerHTML;
+    };
+</script>
+<script>
+function ok(){
+     var ab=document.getElementById('selectas')
+	 ab.style.display="none";
+}
+</script>
+<script>
+  function ee(){
+     
+  }
+</script>
+</html>
